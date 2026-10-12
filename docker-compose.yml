@@ -1,0 +1,7 @@
+services:
+  worker:
+    build: .
+    volumes:
+      - ./sample-data:/data/in:ro
+      - ./out:/data/out
+    command: ["--input", "/data/in/products.jsonl", "--output", "/data/out"]
